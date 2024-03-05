@@ -3,8 +3,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  basePath: 'landing',
+  basePath: '/',
   output: 'export',
+  reactStrictMode: true,
 }
 
 module.exports = nextConfig
