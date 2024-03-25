@@ -3,7 +3,8 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  basePath: '/',
+  images: { unoptimized: true },
+  // basePath: '/',
   output: 'export',
   reactStrictMode: true,
 }
