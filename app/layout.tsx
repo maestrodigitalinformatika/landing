@@ -12,8 +12,8 @@ const inter = Inter({
 })
 
 export const metadata = {
-  title: 'RumahApp',
-  description: 'RumahApp',
+  title: 'Maestro Digital',
+  description: 'Maestro Digital',
 }
 
 export default function RootLayout({

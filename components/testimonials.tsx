@@ -28,7 +28,7 @@ export default function Testimonials() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h2 className="h2 mb-4">Trusted by over 20,000 companies all over the world</h2>
-            <p className="text-xl text-gray-600" data-aos="zoom-y-out">RumahApp revolutionizes businesses through SEO-driven strategies, leveraging web, mobile, and API development with impeccable UI/UX design.</p>
+            <p className="text-xl text-gray-600" data-aos="zoom-y-out">Maestro Digital revolutionizes businesses through SEO-driven strategies, leveraging web, mobile, and API development with impeccable UI/UX design.</p>
           </div>
 
           {/* Items */}
