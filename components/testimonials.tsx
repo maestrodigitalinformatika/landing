@@ -3,8 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image'
 import TestimonialImage from '@/public/images/testimonial.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 
 const testimonials = [
@@ -114,10 +113,10 @@ export default function Testimonials() {
               
               {/* Left Arrow */}
               <button
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-gray-200 rounded-full"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 px-4 py-4 bg-gray-200 rounded-full"
                 onClick={prevTestimonial}
               >
-                <FontAwesomeIcon icon={faChevronLeft} />
+                <FaChevronLeft />
               </button>
 
               {/* Testimonial */}
@@ -139,10 +138,10 @@ export default function Testimonials() {
 
               {/* Right Arrow */}
               <button
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-gray-200 rounded-full"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 px-4 py-4 bg-gray-200 rounded-full"
                 onClick={nextTestimonial}
               >
-                <FontAwesomeIcon icon={faChevronRight} />
+                <FaChevronRight />
               </button>
 
             </div>
