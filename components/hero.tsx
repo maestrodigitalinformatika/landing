@@ -29,9 +29,9 @@ export default function Hero() {
 
           {/* Section header */}
           <div className="text-center pb-12 md:pb-16">
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Welcome to <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Maestro Digital</span></h1>
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Deliver software solutions that drive change months faster</h1>
             <div className="max-w-3xl mx-auto">
-              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Where innovation meets excellence. We empower businesses with cutting-edge solutions, driving growth and transforming industries.</p>
+              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">At TechSolutions, we specialize in empowering technology-first companies by delivering speed and value through our best-in-class development practices and expert skills. Our mission is to unblock your in-house teams, enabling them to achieve their full potential and drive your business forward.</p>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
                   <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Start free trial</a>
@@ -43,15 +43,21 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Hero image */}
-          <ModalVideo
-            thumb={VideoThumb}
-            thumbWidth={768}
-            thumbHeight={432}
-            thumbAlt="Modal video thumbnail"
-            video="/videos/video.mp4"
-            videoWidth={1920}
-            videoHeight={1080} />
+          <div className="flex flex-col md:flex-row items-center p-8">
+            <div className="md:w-1/2 w-full mb-8 md:mb-0">
+              <img
+                src="https://via.placeholder.com/600x400"
+                alt="Example"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="md:w-1/2 w-full md:pl-8">
+              <h2 className="text-3xl font-bold mb-4">Why Your Business Needs Software Development Services</h2>
+              <p className="text-lg text-gray-700">
+              Every business is unique, and so are its challenges. Our team specializes in creating custom software solutions that are specifically designed to meet your unique needs. Whether you're a startup looking to make a mark or an established enterprise aiming to enhance your digital footprint, we have the expertise to help you succeed. Software development services are needed to help your business connected  with your target audience. Worry not, we will make the process as easy  and quick as possible. So, what are you waiting for?
+              </p>
+            </div>
+          </div>
 
         </div>
 

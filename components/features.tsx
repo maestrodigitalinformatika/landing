@@ -1,24 +1,34 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
-import { Transition } from '@headlessui/react'
-import Image from 'next/image'
-import FeaturesBg from '@/public/images/features-bg.png'
-import FeaturesElement from '@/public/images/features-element.png'
+import { FaLaptop, FaPeopleArrows, FaLightbulb, FaCode } from 'react-icons/fa';
 
 export default function Features() {
-  
-  const [tab, setTab] = useState<number>(1)
-
-  const tabs = useRef<HTMLDivElement>(null)
-
-  const heightFix = () => {
-    if (tabs.current && tabs.current.parentElement) tabs.current.parentElement.style.height = `${tabs.current.clientHeight}px`
-  }
-
-  useEffect(() => {
-    heightFix()
-  }, []) 
+  const cards = [
+    {
+      icon: <FaCode />,
+      title: 'Custom Software Development',
+      description: 'We offer fully bespoke software solutions for our clients, and customise your experience to ensure your individual needs are met.',
+      link: '/address'
+    },
+    {
+      icon: <FaLaptop />,
+      title: 'Web Application Development',
+      description: 'Progressive Web Applications are the future of app and website development. Studies show that you can as much as triple your engagement using Progressive Web Applications.',
+      link: 'tel:+6282231532679'
+    },
+    {
+      icon: <FaPeopleArrows />,
+      title: 'Dedicated Agile Development Team',
+      description: 'Our Agile Software Consulting and Development team have worked together to bring innovative, agile thinking to in-house teams in more than 700 companies around the world.',
+      link: 'mailto:byayoan@it.student.pens.ac.id'
+    },
+    {
+      icon: <FaLightbulb />,
+      title: 'Software Product Development',
+      description: 'Develop and adapt your app faster with an extended near-shore software product development team that supports your in-house developers.',
+      link: '/hours'
+    }
+  ];
 
   return (
     <section className="relative">
@@ -31,128 +41,28 @@ export default function Features() {
         <div className="pt-12 md:pt-20">
 
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">Explore the solutions</h1>
+          <div className="mx-auto text-center pb-12 md:pb-16">
+            <h1 className="h2 mb-4">We Know the Solution of Your Business Problems</h1>
             <p className="text-xl text-gray-600">Simplicity, Reliability, and Customer-centricity are the core values that drive us to deliver exceptional technology experiences.</p>
           </div>
 
-          {/* Section content */}
-          <div className="md:grid md:grid-cols-12 md:gap-6">
-
             {/* Content */}
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6" data-aos="fade-right">
-              <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
-                <h3 className="h3 mb-3">Powerful suite of tools</h3>
-                <p className="text-xl text-gray-600">Customer Success Above All. Integrity, Innovation, Collaboration, and Reliability are the pillars that guide us to consistently exceed customer expectations and deliver unparalleled value.</p>
-              </div>
-              {/* Tabs buttons */}
-              <div className="mb-8 md:mb-0">
-                <a
-                  className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 1 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
-                  href="#0"
-                  onClick={(e) => { e.preventDefault(); setTab(1); }}
-                >
-                  <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Cutting-edge Innovation</div>
-                    <div className="text-gray-600">We pioneer groundbreaking technologies to revolutionize industries and drive future advancements.</div>
+            <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
+              {cards.map((card, index) => (
+                <div key={index} className="bg-white border border-gray-300 rounded-lg p-6 flex">
+                  <div className="flex-shrink-0">
+                    <div className="bg-blue-500 text-white rounded-full p-4 flex items-center justify-center">
+                      {card.icon}
+                    </div>
                   </div>
-                  <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
-                    <svg className="w-3 h-3 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11.953 4.29a.5.5 0 00-.454-.292H6.14L6.984.62A.5.5 0 006.12.173l-6 7a.5.5 0 00.379.825h5.359l-.844 3.38a.5.5 0 00.864.445l6-7a.5.5 0 00.075-.534z" />
-                    </svg>
+                  <div className="ml-4">
+                    <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
+                    <p className="mb-4">{card.description}</p>
+                    <a href={card.link} className="bg-transparent border border-solid border-blue-500 hover:bg-blue-400 text-blue-500 hover:text-white px-4 py-2 block text-center rounded">Learn More</a>
                   </div>
-                </a>
-                <a
-                  className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 2 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
-                  href="#0"
-                  onClick={(e) => { e.preventDefault(); setTab(2); }}
-                >
-                  <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Unmatched Quality</div>
-                    <div className="text-gray-600">Our products are meticulously crafted with precision and attention to detail, ensuring unrivaled performance and durability.</div>
-                  </div>
-                  <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
-                    <svg className="w-3 h-3 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11.854.146a.5.5 0 00-.525-.116l-11 4a.5.5 0 00-.015.934l4.8 1.921 1.921 4.8A.5.5 0 007.5 12h.008a.5.5 0 00.462-.329l4-11a.5.5 0 00-.116-.525z" fillRule="nonzero" />
-                    </svg>
-                  </div>
-                </a>
-                <a
-                  className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 3 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-200 border-transparent'}`}
-                  href="#0"
-                  onClick={(e) => { e.preventDefault(); setTab(3); }}
-                >
-                  <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Exceptional Support</div>
-                    <div className="text-gray-600">We provide 24/7 dedicated support, ensuring prompt assistance and personalized solutions for a seamless customer experience.</div>
-                  </div>
-                  <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
-                    <svg className="w-3 h-3 fill-current" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11.334 8.06a.5.5 0 00-.421-.237 6.023 6.023 0 01-5.905-6c0-.41.042-.82.125-1.221a.5.5 0 00-.614-.586 6 6 0 106.832 8.529.5.5 0 00-.017-.485z" fill="#191919" fillRule="nonzero" />
-                    </svg>
-                  </div>
-                </a>
-              </div>
+                </div>
+              ))}
             </div>
-
-            {/* Tabs items */}
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1" data-aos="zoom-y-out" ref={tabs}>
-              <div className="relative flex flex-col text-center lg:text-right">
-                {/* Item 1 */}
-                <Transition
-                  show={tab === 1}
-                  appear={true}
-                  className="w-full"
-                  enter="transition ease-in-out duration-700 transform order-first"
-                  enterFrom="opacity-0 translate-y-16"
-                  enterTo="opacity-100 translate-y-0"
-                  leave="transition ease-in-out duration-300 transform absolute"
-                  leaveFrom="opacity-100 translate-y-0"
-                  leaveTo="opacity-0 -translate-y-16"
-                >
-                  <div className="relative inline-flex flex-col">
-                    <Image className="md:max-w-none mx-auto rounded" src={FeaturesBg} width={500} height="462" alt="Features bg" />
-                    <Image className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width={500} height="44" alt="Element" style={{ top: '30%' }} />
-                  </div>
-                </Transition>
-                {/* Item 2 */}
-                <Transition
-                  show={tab === 2}
-                  appear={true}
-                  className="w-full"
-                  enter="transition ease-in-out duration-700 transform order-first"
-                  enterFrom="opacity-0 translate-y-16"
-                  enterTo="opacity-100 translate-y-0"
-                  leave="transition ease-in-out duration-300 transform absolute"
-                  leaveFrom="opacity-100 translate-y-0"
-                  leaveTo="opacity-0 -translate-y-16"
-                >
-                  <div className="relative inline-flex flex-col">
-                    <Image className="md:max-w-none mx-auto rounded" src={FeaturesBg} width={500} height="462" alt="Features bg" />
-                    <Image className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width={500} height="44" alt="Element" style={{ top: '30%' }} />
-                  </div>
-                </Transition>
-                {/* Item 3 */}
-                <Transition
-                  show={tab === 3}
-                  appear={true}
-                  className="w-full"
-                  enter="transition ease-in-out duration-700 transform order-first"
-                  enterFrom="opacity-0 translate-y-16"
-                  enterTo="opacity-100 translate-y-0"
-                  leave="transition ease-in-out duration-300 transform absolute"
-                  leaveFrom="opacity-100 translate-y-0"
-                  leaveTo="opacity-0 -translate-y-16"
-                >
-                  <div className="relative inline-flex flex-col">
-                    <Image className="md:max-w-none mx-auto rounded" src={FeaturesBg} width={500} height="462" alt="Features bg" />
-                    <Image className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement} width={500} height="44" alt="Element" style={{ top: '30%' }} />
-                  </div>
-                </Transition>
-              </div>
-            </div>
-
-          </div>
 
         </div>
       </div>

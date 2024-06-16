@@ -1,6 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleRight } from '@fortawesome/free-solid-svg-icons';
-
 export default function Portfolio() {
   return (
     <section className="relative">
@@ -10,8 +7,8 @@ export default function Portfolio() {
 
           {/* Section header */}
           <div className="mx-auto pb-12 md:pb-20">
-            <h2 className="h3 mb-4">Jasa Pembuatan Website & Aplikasi <br />Mobile Menyediakan Solusi Digital untuk bisnis Anda.</h2>
-            <p className="text-xl text-gray-600">Lihat Paket <b>Jasa Pembuatan Website &#x27B2; {/*<FontAwesomeIcon icon={faCircleRight} className='text-sm' />*/}</b> </p>
+            <h2 className="h3 mb-4">Website & Mobile Application Development Services Providing Digital Solutions for Your Business</h2>
+            <p className="text-xl text-gray-600">Check Out Our Website Development Service Packages</p>
           </div>
 
           {/* Items */}
@@ -29,8 +26,7 @@ export default function Portfolio() {
                 </div>
                 <p className="mb-2">Website dan Aplikasi untuk Booking Jasa Potong Rambut.</p>
                 <div className="btn-group mt-4">
-                  <a href="#" className="bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 inline-block mr-4 rounded">Detail</a>
-                  <a href="/portfolio" className="bg-transparent border border-solid border-blue-500 hover:bg-blue-400 text-blue-500 hover:text-white px-4 py-2 inline-block mr-4 rounded">Semua Portfolio</a>
+                  <a href="/portfolio" className="bg-transparent border border-solid border-blue-500 hover:bg-blue-400 text-blue-500 hover:text-white px-4 py-2 block w-full text-center rounded">Application Detail</a>
                 </div>
               </div>
             </div>
@@ -47,8 +43,7 @@ export default function Portfolio() {
                 </div>
                 <p className="mb-2">Website Company Profile Sebuah Usaha reparasi dan Jual Beli Kompor Modern.</p>
                 <div className="btn-group mt-4">
-                  <a href="#" className="bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 inline-block mr-4 rounded">Detail</a>
-                  <a href="/portfolio" className="bg-transparent border border-solid border-blue-500 hover:bg-blue-400 text-blue-500 hover:text-white px-4 py-2 inline-block mr-4 rounded">Semua Portfolio</a>
+                  <a href="/portfolio" className="bg-transparent border border-solid border-blue-500 hover:bg-blue-400 text-blue-500 hover:text-white px-4 py-2 block w-full text-center rounded">Application Detail</a>
                 </div>
               </div>
             </div>
@@ -65,8 +60,7 @@ export default function Portfolio() {
                 </div>
                 <p className="mb-2">Aplikasi untuk Side Book Pegangan Marketing Agen Asuransi dari Prudential.</p>
                 <div className="btn-group mt-4">
-                  <a href="#" className="bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 inline-block mr-4 rounded">Detail</a>
-                  <a href="/portfolio" className="bg-transparent border border-solid border-blue-500 hover:bg-blue-400 text-blue-500 hover:text-white px-4 py-2 inline-block mr-4 rounded">Semua Portfolio</a>
+                  <a href="/portfolio" className="bg-transparent border border-solid border-blue-500 hover:bg-blue-400 text-blue-500 hover:text-white px-4 py-2 block w-full text-center rounded">Application Detail</a>
                 </div>
               </div>
             </div>

@@ -1,7 +1,44 @@
+"use client";
+
+import React, { useState } from 'react';
 import Image from 'next/image'
-import TestimonialImage from '@/public/images/testimonial.jpg'
+import TestimonialImage from '@/public/images/testimonial.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
+
+const testimonials = [
+  {
+    quote: "TechSolutions transformed our vision into reality with their exceptional software development services. Their expertise and dedication ensured our project was delivered on time and exceeded our expectations.",
+    name: "Mark Thompson",
+    title: "CEO of InnovateX",
+    image: TestimonialImage,
+  },
+  {
+    quote: "Their team is highly skilled and extremely professional. They provided valuable insights and were always ready to go the extra mile to meet our needs.",
+    name: "Jane Doe",
+    title: "CTO of TechCorp",
+    image: TestimonialImage,
+  },
+  {
+    quote: "We are thoroughly impressed with their innovative solutions and outstanding support. They exceeded our expectations at every turn.",
+    name: "John Smith",
+    title: "Founder of StartUpHub",
+    image: TestimonialImage,
+  }
+];
 
 export default function Testimonials() {
+  const [current, setCurrent] = useState(0);
+
+  const prevTestimonial = () => {
+    setCurrent((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+
+  const nextTestimonial = () => {
+    setCurrent((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <section className="relative">
 
@@ -74,6 +111,14 @@ export default function Testimonials() {
           {/* Testimonials */}
           <div className="max-w-3xl mx-auto mt-20" data-aos="zoom-y-out">
             <div className="relative flex items-start border-2 border-gray-200 rounded bg-white">
+              
+              {/* Left Arrow */}
+              <button
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-gray-200 rounded-full"
+                onClick={prevTestimonial}
+              >
+                <FontAwesomeIcon icon={faChevronLeft} />
+              </button>
 
               {/* Testimonial */}
               <div className="text-center px-12 py-8 pt-20 mx-4 md:mx-0">
@@ -81,16 +126,24 @@ export default function Testimonials() {
                   <svg className="absolute top-0 right-0 -mt-3 -mr-8 w-16 h-16 fill-current text-blue-500" viewBox="0 0 64 64" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                     <path d="M37.89 58.338c-2.648-5.63-3.572-10.045-2.774-13.249.8-3.203 8.711-13.383 23.737-30.538l2.135.532c-6.552 10.033-10.532 17.87-11.939 23.515-.583 2.34.22 6.158 2.41 11.457l-13.57 8.283zm-26.963-6.56c-2.648-5.63-3.572-10.046-2.773-13.25.799-3.203 8.71-13.382 23.736-30.538l2.136.533c-6.552 10.032-10.532 17.87-11.94 23.515-.583 2.339.22 6.158 2.41 11.456l-13.57 8.283z" />
                   </svg>
-                  <Image className="relative rounded-full" src={TestimonialImage} width={96} height={96} alt="Testimonial 01" />
+                  <Image className="relative rounded-full" src={testimonials[current].image} width={96} height={96} alt={`Testimonial ${current + 1}`} />
                 </div>
                 <blockquote className="text-xl font-medium mb-4">
-                  “ I love this product and would recommend it to anyone. Could be not easier to use, and our multiple websites are wonderful. We get nice comments all the time. “
+                  {testimonials[current].quote}
                 </blockquote>
-                <cite className="block font-bold text-lg not-italic mb-1">Darya Finger</cite>
+                <cite className="block font-bold text-lg not-italic mb-1">{testimonials[current].name}</cite>
                 <div className="text-gray-600">
-                  <span>CEO & Co-Founder</span> <a className="text-blue-600 hover:underline" href="#0">@Dropbox</a>
+                  <span>{testimonials[current].title}</span>
                 </div>
               </div>
+
+              {/* Right Arrow */}
+              <button
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-gray-200 rounded-full"
+                onClick={nextTestimonial}
+              >
+                <FontAwesomeIcon icon={faChevronRight} />
+              </button>
 
             </div>
           </div>
