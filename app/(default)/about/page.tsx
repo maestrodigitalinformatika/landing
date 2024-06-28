@@ -31,7 +31,7 @@ export default function Home() {
       </div>
 
       {/* About */}
-      <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-16">
+      <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-16 px-8 md:px-4">
         <div className="flex flex-col items-start justify-center mb-8 md:mb-0 md:w-1/2">
           <h2 className="text-3xl font-bold mb-4">Hy, We Are Mavia Digital, your</h2>
           <p className="mb-6">Mavia Digital was founded in 2011. Initially, we focused on developing Windows-based applications. One of our early achievements was creating an app that was preloaded on the first Nokia Lumia family, a moment we are incredibly proud of. As we strived to improve over the years, we adapted to meet the evolving needs of the world. Embracing these challenges, we have now become proficient across various platforms, offering a full range of solutions for any industry. Additionally, we are developing our own consumer and corporate mobility-related products.</p>
@@ -47,7 +47,7 @@ export default function Home() {
       </div>
 
       {/* Vision */}
-      <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-16">
+      <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto py-16 px-8 md:px-4">
         <div className="md:w-1/2 mb-8 md:mb-0">
           <img src="/path/to/example-image.jpg" alt="Example" className="w-full h-auto" />
         </div>
