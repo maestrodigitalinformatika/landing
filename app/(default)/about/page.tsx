@@ -58,7 +58,7 @@ export default function Home() {
       </div>
 
       {/* Missions */}
-      <div className="max-w-6xl mx-auto py-16">
+      <div className="max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto py-16">
         <h2 className="text-3xl font-bold mb-8 text-center">Our Values</h2>
         <div className="space-y-4">
           {missions.map(mission => (
@@ -68,7 +68,7 @@ export default function Home() {
       </div>
 
       {/* Our Team */}
-      <div className="max-w-6xl mx-auto py-16">
+      <div className="max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto py-16">
         <h2 className="text-3xl font-bold mb-8 text-center">Our Team</h2>
         <div className="space-y-4">
           {employees.map((employee, index) => (
